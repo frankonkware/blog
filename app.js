@@ -1,5 +1,6 @@
 //npm modules
 const express = require('express');
+const chalk = require('chalk');
 
 // create the server
 const app = express();
@@ -11,5 +12,5 @@ app.get('/', (req,res) => {
 
 // tell the server what port to listen on
 app.listen(5000, () => {
-  console.log('Listening on localhost:3000')
+  console.log('Listening on localhost: ' + chalk.green('5000'))
 })
