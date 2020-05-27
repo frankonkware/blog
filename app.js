@@ -1,23 +1,22 @@
-//npm modules
+// npm modules
 const express = require('express');
-const chalk = require('chalk');
+const chalk = require('chalk'); // for color coding different logs for easier analysis
 const debug = require('debug')('app');
-const morgan = require('morgan');
-const path = require('path');
+const morgan = require('morgan'); // for logging requests to server
+const path = require('path'); // for static dir name
 
 // create the server
 const app = express();
 
 
-app.use(morgan('tiny'));
-app.use(express.static(path.join(__dirname, '/public/')))  //tell express about static directory for putting static files like css and javascript
+app.use(morgan('tiny')); // tiny will log minimum logs
+app.use(express.static(path.join(__dirname, '/public/'))); // tell express about static directory for putting static files like css and javascript
 
 
-
-//Homepage route
-app.get('/', (req,res) => {
-    res.send('You just hit the home page')
-})
+// Homepage route
+app.get('/', (req, res) => {
+  res.send('You just hit the home page');
+});
 
 // tell the server what port to listen on
 app.listen(5000, () => {
