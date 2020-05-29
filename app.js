@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 
 // Homepage route
 app.get('/', (req, res) => {
-  res.send('You just hit the home page');
+  res.render('index', { title: 'Env Blog' });
 });
 
 // tell the server what port to listen on
