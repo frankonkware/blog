@@ -11,7 +11,8 @@ const app = express();
 
 app.use(morgan('tiny')); // tiny will log minimum logs
 app.use(express.static(path.join(__dirname, '/public/'))); // tell express about static directory for putting static files like css and javascript
-
+app.set('views', './src/views'); // Set Views Directory
+app.set('view engine', 'ejs');
 
 // Homepage route
 app.get('/', (req, res) => {
