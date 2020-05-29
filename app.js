@@ -7,6 +7,7 @@ const path = require('path'); // for static dir name
 
 // create the server
 const app = express();
+const port = process.env.PORT || 5000;
 
 
 app.use(morgan('tiny')); // tiny will log minimum logs
@@ -20,6 +21,6 @@ app.get('/', (req, res) => {
 });
 
 // tell the server what port to listen on
-app.listen(5000, () => {
-  debug(`Listening on port: ${chalk.green('5000')}`);
+app.listen(port, () => {
+  debug(`Listening on port: ${chalk.green(port)}`);
 });
